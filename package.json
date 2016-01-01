@@ -1,0 +1,27 @@
+{
+  "name": "express_google_analytics",
+  "version": "1.0.0",
+  "description": "Tracking API useage throught Google Analytics",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinyNova/express_google_analytics.git"
+  },
+  "keywords": [
+    "Express",
+    "Google",
+    "Analytics"
+  ],
+  "author": "Britton Mathews <britton.mathews@tinynova.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TinyNova/express_google_analytics/issues"
+  },
+  "homepage": "https://github.com/TinyNova/express_google_analytics#readme",
+  "dependencies": {
+    "universal-analytics": "^0.3.10"
+  }
+}
