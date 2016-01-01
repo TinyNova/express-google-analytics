@@ -1,5 +1,5 @@
 {
-  "name": "express_google_analytics",
+  "name": "express-google-analytics",
   "version": "1.0.0",
   "description": "Tracking API useage throught Google Analytics",
   "main": "index.js",
