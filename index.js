@@ -1,17 +1,18 @@
 var ua = require('universal-analytics');
 module.exports = function (googleAnalyticsId) {
-    return function (request, response, next) {
-        if (!googleAnalyticsId) {
+    return function (userId, request, response, next) {
+        console.log(userId);
+        if (!userId) {
             setImmediate(next);
             return;
         }
 
-        var visitor = ua(googleAnalyticsId);
+        var visitor = ua(userId);
 
         visitor.pageview({
             dp: request.url,
             dh: request.headers.host,
-            uip: request.headers['x-forwarded-for'] || request.connection.remoteAddress
+            uip: request.headers['x-forwarded-for'] || request.connection.remoteAddress,
             ua: request.headers['user-agent'],
             dr: request.headers.referrer || request.headers.referer,
             de: request.headers['accept-encoding'],
@@ -19,5 +20,5 @@ module.exports = function (googleAnalyticsId) {
         }).send();
 
         next();
-    };
+    }.bind(this, googleAnalyticsId);
 };
