@@ -1,7 +1,6 @@
 var ua = require('universal-analytics');
 module.exports = function (googleAnalyticsId) {
     return function (userId, request, response, next) {
-        console.log(userId);
         if (!userId) {
             setImmediate(next);
             return;
